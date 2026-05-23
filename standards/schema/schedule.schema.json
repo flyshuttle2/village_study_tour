@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "schedule.schema.json",
+  "title": "活动流程",
+  "type": "object",
+  "properties": {
+    "activityId": { "type": "string" },
+    "activityName": { "type": "string" },
+    "schedule": {
+      "type": "array",
+      "description": "活动流程时间线",
+      "items": {
+        "type": "object",
+        "required": ["time", "content"],
+        "properties": {
+          "time": { "$ref": "_core.schema.json#/definitions/timeSlot" },
+          "content": { 
+            "type": "string", 
+            "description": "活动内容名称" 
+          },
+          "rainPlan": { 
+            "type": "string", 
+            "description": "下雨备案方案" 
+          },
+          "location": { 
+            "type": "string",
+            "description": "地点名称，关联 venue.name"
+          },
+          "staff": { 
+            "type": "string", 
+            "description": "负责人姓名" 
+          },
+          "materials": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "所需物料列表"
+          },
+          "notes": { "type": "string", "description": "备注说明" }
+        }
+      }
+    }
+  }
+}

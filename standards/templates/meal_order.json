@@ -1,0 +1,27 @@
+{
+  "template": "餐食下单表",
+  "fields": {
+    "activityDate": null,
+    "totalParticipants": null,
+    "teamCount": null,
+    "teamTypes": null,
+    "mealTypes": ["蒸笼宴", "柴火鸡", "清汤小火锅", "中餐"],
+    "diningAreas": ["自助厨房", "餐厅A区", "户外灶台"],
+    "notes": null
+  },
+  "tableHeaders": [
+    "序号",
+    "团队名称", 
+    "团队性质",
+    "团队人数",
+    "上餐时间",
+    "餐食类型",
+    "用餐地点",
+    "用餐桌数",
+    "备注",
+    "是否留样"
+  ],
+  "sample": {
+    "teamNature": ["亲子游学", "成人团建", "班级研学", "散客"]
+  }
+}

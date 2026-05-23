@@ -1,0 +1,41 @@
+{
+  "village_name": "白雾村",
+  "generated_at": "2026-05-23T06:08:16.118167",
+  "files": {
+    "solution_pdf": "C:\\hermes\\WorkAI\\village_study_tour\\output\\白雾村\\白雾村_研学解决方案.pdf",
+    "treasure_hunt_pdf": "C:\\hermes\\WorkAI\\village_study_tour\\output\\白雾村\\白雾村_九宫格寻宝卡.pdf",
+    "lesson_plan_pdfs": [
+      "C:\\hermes\\WorkAI\\village_study_tour\\output\\白雾村\\白雾村_教案1_梯田农耕体验.pdf",
+      "C:\\hermes\\WorkAI\\village_study_tour\\output\\白雾村\\白雾村_教案2_传统竹编手工艺.pdf",
+      "C:\\hermes\\WorkAI\\village_study_tour\\output\\白雾村\\白雾村_教案3_乡村节庆文化探秘.pdf",
+      "C:\\hermes\\WorkAI\\village_study_tour\\output\\白雾村\\白雾村_教案4_溪流生态观察.pdf",
+      "C:\\hermes\\WorkAI\\village_study_tour\\output\\白雾村\\白雾村_教案5_农家菜烹饪课堂.pdf"
+    ],
+    "summer_camp_pdf": "C:\\hermes\\WorkAI\\village_study_tour\\output\\白雾村\\白雾村_夏令营研学手册.pdf",
+    "winter_camp_pdf": "C:\\hermes\\WorkAI\\village_study_tour\\output\\白雾村\\白雾村_冬令营研学手册.pdf",
+    "exhibition_pdf": "C:\\hermes\\WorkAI\\village_study_tour\\output\\白雾村\\白雾村_策展方案.pdf",
+    "curriculum_pdf": "C:\\hermes\\WorkAI\\village_study_tour\\output\\白雾村\\白雾村_课程体系.pdf",
+    "poster_pngs": [
+      "C:\\hermes\\WorkAI\\village_study_tour\\output\\白雾村\\白雾村_海报_课程1_梯田农耕体验.png",
+      "C:\\hermes\\WorkAI\\village_study_tour\\output\\白雾村\\白雾村_海报_课程2_传统竹编手工艺.png",
+      "C:\\hermes\\WorkAI\\village_study_tour\\output\\白雾村\\白雾村_海报_课程3_乡村节庆文化探秘.png",
+      "C:\\hermes\\WorkAI\\village_study_tour\\output\\白雾村\\白雾村_海报_课程4_溪流生态观察.png",
+      "C:\\hermes\\WorkAI\\village_study_tour\\output\\白雾村\\白雾村_海报_课程5_农家菜烹饪课堂.png",
+      "C:\\hermes\\WorkAI\\village_study_tour\\output\\白雾村\\白雾村_海报_一日游学.png",
+      "C:\\hermes\\WorkAI\\village_study_tour\\output\\白雾村\\白雾村_海报_夏令营.png",
+      "C:\\hermes\\WorkAI\\village_study_tour\\output\\白雾村\\白雾村_海报_寻宝卡.png",
+      "C:\\hermes\\WorkAI\\village_study_tour\\output\\白雾村\\白雾村_海报_村庄宣传.png"
+    ],
+    "slogans": [
+      "走进白雾村，探索乡土之美",
+      "白雾村——探秘云岭梯田文明，体验山乡农耕生活新体验",
+      "在白雾村，读懂乡土中国"
+    ],
+    "logo_path": "C:\\hermes\\WorkAI\\village_study_tour\\output\\白雾村\\白雾村_品牌Logo.png",
+    "cultural_products": [
+      "C:\\hermes\\WorkAI\\village_study_tour\\output\\白雾村\\白雾村_文创_帆布袋.png",
+      "C:\\hermes\\WorkAI\\village_study_tour\\output\\白雾村\\白雾村_文创_明信片.png",
+      "C:\\hermes\\WorkAI\\village_study_tour\\output\\白雾村\\白雾村_文创_文化衫.png"
+    ]
+  }
+}

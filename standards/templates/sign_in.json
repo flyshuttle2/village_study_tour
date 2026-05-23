@@ -1,0 +1,29 @@
+{
+  "template": "活动签到表",
+  "fields": {
+    "activityName": null,
+    "teamName": null,
+    "participants": {
+      "expected": null,
+      "actual": null,
+      "breakdown": {
+        "teachers": null,
+        "children": null,
+        "parents": null
+      },
+      "ageGroups": {
+        "1_2岁": null,
+        "2_3岁": null,
+        "3岁以上": null
+      }
+    },
+    "signatures": []
+  },
+  "columns": {
+    "group1": ["序号", "姓名", "出行人数", "联系方式", "签到"],
+    "group2": ["序号", "姓名", "出行人数", "联系方式", "签到"]
+  },
+  "maxRows": 15,
+  "notes": "含老师（ ）人，小朋友（ ）人，家长（ ）人。1-2岁（ ）人，2-3岁（ ）人",
+  "signatures": ["主教确认签名", "对接老师确认签名"]
+}

@@ -1,0 +1,88 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "activity.schema.json",
+  "title": "活动元数据",
+  "type": "object",
+  "required": ["name", "date", "type", "participants"],
+  "properties": {
+    "id": { 
+      "type": "string", 
+      "description": "活动唯一标识符" 
+    },
+    "name": { 
+      "type": "string",
+      "description": "活动名称",
+      "examples": ["元宵节主题活动", "农耕体验日"]
+    },
+    "date": { 
+      "type": "string", 
+      "format": "date",
+      "description": "活动日期，格式：2024-03-15"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["散客", "团队"],
+      "description": "活动类型"
+    },
+    "subType": {
+      "type": "string",
+      "enum": [
+        "班级研学", 
+        "春秋游", 
+        "毕业典礼", 
+        "冬夏令营", 
+        "亲子活动", 
+        "军训", 
+        "游学", 
+        "社会实践", 
+        "野外生存"
+      ],
+      "description": "活动细分类型"
+    },
+    "participants": {
+      "$ref": "_core.schema.json#/definitions/participantCount"
+    },
+    "teamName": { 
+      "type": "string", 
+      "description": "团队/单位名称" 
+    },
+    "travelMode": {
+      "type": "string",
+      "enum": ["自驾", "大巴车"],
+      "description": "出行方式"
+    },
+    "mealType": {
+      "type": "string",
+      "enum": ["蒸笼宴", "中餐", "盘餐", "火锅", "柴火鸡", "清汤小火锅", "自助厨房"],
+      "description": "餐食类型"
+    },
+    "notes": { 
+      "type": "string", 
+      "description": "活动备注，如：摄影/横幅/桁架等" 
+    },
+    "staff": {
+      "type": "object",
+      "description": "工作人员安排",
+      "properties": {
+        "manager": { "$ref": "_core.schema.json#/definitions/staff" },
+        "main": { "$ref": "_core.schema.json#/definitions/staff" },
+        "assistants": { 
+          "type": "array", 
+          "items": { "$ref": "_core.schema.json#/definitions/staff" } 
+        },
+        "workshopTeachers": { 
+          "type": "array", 
+          "items": { "$ref": "_core.schema.json#/definitions/staff" } 
+        },
+        "kitchen": { "$ref": "_core.schema.json#/definitions/staff" }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": ["待确认", "已确认", "进行中", "已完成", "已取消"],
+      "description": "活动状态"
+    },
+    "createdAt": { "type": "string", "format": "date-time" },
+    "updatedAt": { "type": "string", "format": "date-time" }
+  }
+}

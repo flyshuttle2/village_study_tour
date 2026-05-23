@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "inventory.schema.json",
+  "title": "物资出入库",
+  "type": "object",
+  "definitions": {
+    "materialItem": {
+      "type": "object",
+      "description": "物料条目",
+      "properties": {
+        "name": { "type": "string", "description": "物料名称" },
+        "quantity": { "type": "number", "description": "数量" },
+        "unit": { 
+          "type": "string", 
+          "default": "个",
+          "enum": ["个", "张", "份", "套", "台", "把", "包", "箱"]
+        },
+        "responsible": { "type": "string", "description": "负责人" }
+      }
+    },
+    "inventoryRecord": {
+      "type": "object",
+      "required": ["date"],
+      "properties": {
+        "id": { "type": "string" },
+        "date": { 
+          "type": "string", 
+          "format": "date",
+          "description": "日期" 
+        },
+        "teamName": { 
+          "type": "string", 
+          "description": "关联团队/活动名称" 
+        },
+        "activityId": { "type": "string" },
+        "outbound": {
+          "type": "array",
+          "description": "出库物料",
+          "items": { "$ref": "#/definitions/materialItem" }
+        },
+        "inbound": {
+          "type": "array",
+          "description": "入库物料",
+          "items": { "$ref": "#/definitions/materialItem" }
+        },
+        "usage": { 
+          "type": "number", 
+          "description": "实际使用数量" 
+        },
+        "remaining": { 
+          "type": "number", 
+          "description": "剩余库存" 
+        },
+        "notes": { "type": "string" }
+      }
+    }
+  },
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": ["消耗品", "固定资产"],
+      "description": "物资类型"
+    },
+    "baseName": { "type": "string", "description": "基地名称" },
+    "records": {
+      "type": "array",
+      "description": "出入库记录",
+      "items": { "$ref": "#/definitions/inventoryRecord" }
+    }
+  }
+}

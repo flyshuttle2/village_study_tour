@@ -1,0 +1,127 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "index.schema.json",
+  "title": "研学活动标准化体系 - Schema 索引",
+  "description": "乡村研学基地执行标准化表格的 JSON Schema 定义",
+  "schemas": {
+    "_core": {
+      "file": "_core.schema.json",
+      "description": "核心类型定义（时间段、工作人员、参与人数）",
+      "definitions": ["timeSlot", "staff", "participantCount"]
+    },
+    "activity": {
+      "file": "activity.schema.json",
+      "description": "活动元数据",
+      "source": "附件1：基地活动下单表、附件2：活动排期表",
+      "usage": "活动下单、排期确认"
+    },
+    "schedule": {
+      "file": "schedule.schema.json", 
+      "description": "活动流程时间线",
+      "source": "附件1、附件2、附件8：活动执行单",
+      "usage": "生成日程安排"
+    },
+    "material": {
+      "file": "material.schema.json",
+      "description": "物料准备清单",
+      "source": "附件3：活动物料准备单、附件9：活动执行物料清单",
+      "usage": "物料准备、物资调度"
+    },
+    "venue": {
+      "file": "venue.schema.json",
+      "description": "场地信息",
+      "source": "附件5：基地场地情况分析表",
+      "usage": "场地推荐、工坊安排"
+    },
+    "feedback": {
+      "file": "feedback.schema.json",
+      "description": "反馈评价",
+      "source": "附件10：带队情况反馈表、附件11：团队体验反馈表",
+      "usage": "满意度调查、教练考核"
+    },
+    "inventory": {
+      "file": "inventory.schema.json",
+      "description": "物资出入库",
+      "source": "附件12：库房物资出入库登记表",
+      "usage": "库存管理、资源调度"
+    },
+    "execution": {
+      "file": "execution.schema.json",
+      "description": "活动执行单",
+      "source": "附件8：研学团队活动执行单",
+      "usage": "执行确认、流程控制"
+    }
+  },
+  "workflow": {
+    "phases": [
+      {
+        "phase": "活动前7天",
+        "actions": [
+          "确认活动基本信息 (activity)",
+          "创建活动排期 (schedule)",
+          "确认活动人员安排 (activity.staff)"
+        ]
+      },
+      {
+        "phase": "活动前3天",
+        "actions": [
+          "确认物料清单 (material)",
+          "检查场地可用性 (venue)",
+          "进行物资采购"
+        ]
+      },
+      {
+        "phase": "活动前1天",
+        "actions": [
+          "最终确认物料 (material)",
+          "确认餐食安排 (meal_order)",
+          "发布执行通知"
+        ]
+      },
+      {
+        "phase": "活动当天",
+        "actions": [
+          "执行签到 (sign_in)",
+          "执行巡场检查 (inspection_checklist)",
+          "执行活动 (schedule)"
+        ]
+      },
+      {
+        "phase": "活动结束后",
+        "actions": [
+          "物资归库登记 (inventory)",
+          "收集反馈 (feedback)",
+          "活动总结"
+        ]
+      }
+    ]
+  },
+  "docs": {
+    "assistant_rules": {
+      "file": "assistant_rules.md",
+      "description": "助教工作守则与标准话术"
+    },
+    "inspection_checklist": {
+      "file": "inspection_checklist.md", 
+      "description": "活动前巡场检查清单"
+    },
+    "feedback_criteria": {
+      "file": "feedback_criteria.md",
+      "description": "反馈评价维度与标准"
+    }
+  },
+  "templates": {
+    "execution_form": {
+      "file": "execution_form.json",
+      "description": "活动执行单填充模板"
+    },
+    "sign_in": {
+      "file": "sign_in.json",
+      "description": "签到表模板"
+    },
+    "meal_order": {
+      "file": "meal_order.json",
+      "description": "餐食下单表模板"
+    }
+  }
+}

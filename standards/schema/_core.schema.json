@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "core.schema.json",
+  "title": "研学活动核心类型定义",
+  "definitions": {
+    "timeSlot": {
+      "type": "object",
+      "description": "时间段",
+      "properties": {
+        "start": {
+          "type": "string",
+          "pattern": "^\\d{2}:\\d{2}$",
+          "examples": ["10:00", "14:30"]
+        },
+        "end": {
+          "type": "string",
+          "pattern": "^\\d{2}:\\d{2}$",
+          "examples": ["11:30", "16:00"],
+          "description": "end为空表示持续进行"
+        }
+      },
+      "required": ["start"]
+    },
+    "staff": {
+      "type": "object",
+      "description": "工作人员",
+      "properties": {
+        "name": { "type": "string" },
+        "role": {
+          "type": "string",
+          "enum": ["主教", "助教", "工坊老师", "后勤", "客服", "管家"],
+          "description": "职位"
+        },
+        "phone": { "type": "string", "description": "联系电话" },
+        "wechat": { "type": "string", "description": "微信号" }
+      },
+      "required": ["name", "role"]
+    },
+    "participantCount": {
+      "type": "object",
+      "description": "参与人数统计",
+      "properties": {
+        "total": { "type": "integer", "minimum": 0 },
+        "adults": { "type": "integer", "minimum": 0, "description": "成人数量" },
+        "children": { "type": "integer", "minimum": 0, "description": "儿童数量" },
+        "breakdown": {
+          "type": "object",
+          "description": "年龄段细分",
+          "properties": {
+            "1_2岁": { "type": "integer" },
+            "2_3岁": { "type": "integer" },
+            "3_6岁": { "type": "integer" },
+            "6_12岁": { "type": "integer" },
+            "12岁以上": { "type": "integer" }
+          }
+        }
+      },
+      "required": ["total"]
+    }
+  }
+}

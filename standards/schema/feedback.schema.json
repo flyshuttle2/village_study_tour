@@ -1,0 +1,122 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "feedback.schema.json",
+  "title": "反馈评价",
+  "type": "object",
+  "definitions": {
+    "rating": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5,
+      "description": "1-5分评分，5=非常满意，1=非常不满意"
+    },
+    "ratingScale": {
+      "type": "object",
+      "properties": {
+        "5": { "type": "string", "const": "非常满意" },
+        "4": { "type": "string", "const": "比较满意" },
+        "3": { "type": "string", "const": "一般" },
+        "2": { "type": "string", "const": "不太满意" },
+        "1": { "type": "string", "const": "非常不满意" }
+      }
+    }
+  },
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": ["team_experience", "coach_feedback"],
+      "description": "反馈类型：团队体验 / 教练反馈"
+    },
+    "activityId": { "type": "string" },
+    "activityName": { "type": "string" },
+    "activityDate": { "type": "string", "format": "date" },
+    "teamName": { "type": "string" },
+    "respondent": {
+      "type": "object",
+      "description": "反馈人信息",
+      "properties": {
+        "name": { "type": "string" },
+        "phone": { "type": "string" },
+        "teamName": { "type": "string" }
+      }
+    },
+    "overallSatisfaction": { "$ref": "#/definitions/rating" },
+    "infoChannel": {
+      "type": "string",
+      "enum": [
+        "学校/机构合作", 
+        "微信朋友圈", 
+        "微信公众号", 
+        "朋友介绍", 
+        "其他平台推广"
+      ]
+    },
+    "activityPlanning": { "$ref": "#/definitions/rating" },
+    "activityContent": {
+      "type": "object",
+      "description": "活动内容饱满度评价",
+      "properties": {
+        "innovation": { "type": "boolean", "description": "创新性" },
+        "fun": { "type": "boolean", "description": "趣味性" },
+        "expansion": { "type": "boolean", "description": "拓展性" },
+        "education": { "type": "boolean", "description": "科普性" },
+        "targeted": { "type": "boolean", "description": "人群针对性" }
+      }
+    },
+    "completionRate": { "$ref": "#/definitions/rating" },
+    "staffRating": { "$ref": "#/definitions/rating" },
+    "explanationLevel": { "$ref": "#/definitions/rating" },
+    "staffAppearance": { "$ref": "#/definitions/rating" },
+    "serviceAttitude": { "$ref": "#/definitions/rating" },
+    "timeControl": { "$ref": "#/definitions/rating" },
+    "venueHygiene": { "$ref": "#/definitions/rating" },
+    "venueSafety": { "$ref": "#/definitions/rating" },
+    "mealVariety": {
+      "type": "string",
+      "enum": [
+        "种类多样", 
+        "比较齐全", 
+        "菜品一般", 
+        "菜品单一", 
+        "菜品无特色"
+      ]
+    },
+    "mealTaste": { "$ref": "#/definitions/rating" },
+    "suggestions": { 
+      "type": "string", 
+      "description": "宝贵建议" 
+    },
+    "coachFeedback": {
+      "type": "object",
+      "description": "教练执教反馈",
+      "properties": {
+        "coach": { "type": "string", "description": "教练姓名" },
+        "topic": { "type": "string", "description": "上课主题" },
+        "feedback": {
+          "type": "array",
+          "description": "分项反馈",
+          "items": {
+            "type": "object",
+            "properties": {
+              "category": { 
+                "type": "string",
+                "examples": ["开场", "农场讲解", "场地介绍", "工坊课程", "整体印象"]
+              },
+              "strengths": { 
+                "type": "array", 
+                "items": { "type": "string" },
+                "description": "优点"
+              },
+              "improvements": { 
+                "type": "array", 
+                "items": { "type": "string" },
+                "description": "需改进之处"
+              }
+            }
+          }
+        }
+      }
+    },
+    "createdAt": { "type": "string", "format": "date-time" }
+  }
+}

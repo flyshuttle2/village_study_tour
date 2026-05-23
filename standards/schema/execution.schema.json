@@ -1,0 +1,90 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "execution.schema.json",
+  "title": "活动执行单",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "template": { 
+      "type": "string", 
+      "const": "研学团队活动执行单" 
+    },
+    "date": { "type": "string", "format": "date" },
+    "theme": { "type": "string", "description": "活动主题" },
+    "teamType": {
+      "type": "string",
+      "enum": ["亲子活动", "团建活动", "研学", "其他"]
+    },
+    "teamName": { "type": "string" },
+    "participants": {
+      "type": "object",
+      "properties": {
+        "expected": { "type": "integer", "description": "应到人数" },
+        "actual": { "type": "integer", "description": "实到人数" }
+      }
+    },
+    "staff": {
+      "type": "object",
+      "properties": {
+        "main": { "type": "string", "description": "主教" },
+        "assistants": { 
+          "type": "array", 
+          "items": { "type": "string" },
+          "description": "助教列表"
+        },
+        "workshopTeachers": { 
+          "type": "array", 
+          "items": { "type": "string" },
+          "description": "工坊老师列表"
+        }
+      }
+    },
+    "materials": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "物料清单备注"
+    },
+    "meal": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["蒸笼宴", "桌餐", "其他"]
+        },
+        "quantity": { "type": "integer", "description": "数量/桌数" }
+      }
+    },
+    "schedule": {
+      "type": "array",
+      "description": "活动流程",
+      "items": {
+        "type": "object",
+        "properties": {
+          "time": { "type": "string", "description": "具体时间" },
+          "content": { "type": "string", "description": "内容" },
+          "location": { "type": "string", "description": "地点" },
+          "staff": { "type": "string", "description": "负责人" }
+        }
+      }
+    },
+    "settlement": {
+      "type": "object",
+      "properties": {
+        "total": { "type": "number", "description": "结算总金额" },
+        "actual": { "type": "number", "description": "实际支付金额" },
+        "paymentMethod": {
+          "type": "string",
+          "enum": ["微信", "支付宝", "银联", "现金", "其他"]
+        }
+      }
+    },
+    "notes": { "type": "string" },
+    "signatures": {
+      "type": "object",
+      "properties": {
+        "mainCoach": { "type": "string", "description": "主教签字" },
+        "clientContact": { "type": "string", "description": "对接老师签字" }
+      }
+    }
+  }
+}

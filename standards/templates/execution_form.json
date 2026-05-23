@@ -1,0 +1,34 @@
+{
+  "template": "研学团队活动执行单",
+  "fields": {
+    "date": null,
+    "theme": null,
+    "teamType": ["亲子活动", "团建活动", "研学", "其他"],
+    "teamName": null,
+    "participants": {
+      "expected": null,
+      "actual": null
+    },
+    "staff": {
+      "main": null,
+      "assistants": [],
+      "workshopTeachers": []
+    },
+    "materials": [],
+    "meal": {
+      "type": ["蒸笼宴", "桌餐", "其他"],
+      "quantity": null
+    },
+    "schedule": [],
+    "settlement": {
+      "total": null,
+      "actual": null,
+      "paymentMethod": ["微信", "支付宝", "银联", "现金", "其他"]
+    },
+    "notes": null
+  },
+  "scheduleTemplate": {
+    "headers": ["具体时间", "内容", "地点", "负责人"],
+    "rainPlanColumn": true
+  }
+}

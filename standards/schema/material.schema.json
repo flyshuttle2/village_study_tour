@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "material.schema.json",
+  "title": "物料准备单",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "activityId": { "type": "string" },
+    "activityName": { "type": "string" },
+    "activityDate": { "type": "string", "format": "date" },
+    "participantCount": { "type": "integer" },
+    "prepareRatio": { 
+      "type": "number", 
+      "default": 1.1,
+      "description": "物料准备比例，默认1.1表示n+10%"
+    },
+    "notes": { "type": "string", "description": "额外备注" },
+    "confirmed": { 
+      "type": "boolean", 
+      "description": "主教是否已确认" 
+    },
+    "confirmedBy": { "type": "string", "description": "确认人姓名" },
+    "confirmedAt": { "type": "string", "format": "date-time" },
+    "items": {
+      "type": "array",
+      "description": "物料项目列表",
+      "items": {
+        "type": "object",
+        "required": ["time", "activity", "materials"],
+        "properties": {
+          "time": { "$ref": "_core.schema.json#/definitions/timeSlot" },
+          "activity": { 
+            "type": "string", 
+            "description": "活动/工坊名称" 
+          },
+          "materials": {
+            "type": "array",
+            "description": "物料明细",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": { "type": "string", "description": "物料名称" },
+                "quantity": { 
+                  "type": ["number", "string"], 
+                  "description": "数量或描述" 
+                },
+                "unit": { 
+                  "type": "string", 
+                  "default": "份",
+                  "enum": ["份", "个", "张", "把", "包", "箱", "台", "套"]
+                }
+              }
+            }
+          },
+          "toProcure": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "需要采购的物料"
+          },
+          "prepared": { 
+            "type": "boolean",
+            "description": "是否已准备完毕"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "venue.schema.json",
+  "title": "场地信息",
+  "type": "object",
+  "properties": {
+    "baseName": { 
+      "type": "string",
+      "description": "基地/农场名称" 
+    },
+    "updateDate": { 
+      "type": "string", 
+      "format": "date",
+      "description": "信息更新日期" 
+    },
+    "venues": {
+      "type": "array",
+      "description": "场地列表",
+      "items": {
+        "type": "object",
+        "required": ["name", "type", "location"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { 
+            "type": "string", 
+            "description": "场地/教室名称",
+            "examples": ["木工坊", "染坊", "烘焙室"]
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "工坊教室", 
+              "用餐餐厅", 
+              "户外场地", 
+              "住宿", 
+              "会议",
+              "景观"
+            ],
+            "description": "场地类型"
+          },
+          "location": { 
+            "type": "string", 
+            "description": "位置描述",
+            "examples": ["进门右手边", "木工坊区域"]
+          },
+          "capacity": {
+            "type": "object",
+            "description": "容纳人数",
+            "properties": {
+              "min": { "type": "integer", "minimum": 0 },
+              "max": { "type": "integer", "minimum": 0 },
+              "unit": { 
+                "type": "string", 
+                "default": "人" 
+              },
+              "tables": { 
+                "type": "integer", 
+                "description": "桌数(用餐场所)" 
+              }
+            }
+          },
+          "workshops": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "适合开展的工坊类型",
+            "examples": [
+              ["木工系列", "创客STEAM"],
+              ["自然美育", "非遗系列"],
+              ["食育课程", "亲子用餐"]
+            ]
+          },
+          "features": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "场地特色/设施"
+          },
+          "imageUrl": { 
+            "type": "string", 
+            "format": "uri",
+            "description": "现场图片链接" 
+          },
+          "status": {
+            "type": "string",
+            "enum": ["可用", "占用", "维护中", "停用"],
+            "default": "可用"
+          }
+        }
+      }
+    }
+  }
+}
