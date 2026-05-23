@@ -8,6 +8,13 @@
 
 「村庄研学魔法师」是一个基于 AI 大模型的乡村研学解决方案生成系统。用户只需输入村庄名称和关键词，系统即可在数分钟内自动生成完整的研学旅行解决方案，包括课程教案、宣传海报、品牌视觉等全套内容。
 
+<img width="2048" height="2048" alt="龙潭研学_Logo_纯文字版" src="https://github.com/user-attachments/assets/6fdd1dc3-d867-4aad-85f6-924093970bc3" />
+
+<img width="2048" height="2048" alt="龙潭研学_Logo_图文混合版" src="https://github.com/user-attachments/assets/e4481830-e941-463c-95d9-6fba80536640" />
+
+<img width="2048" height="1536" alt="龙潭村研学地图_手绘版" src="https://github.com/user-attachments/assets/f774dc33-67c1-44d9-ba4e-90a5f6c52782" />
+
+
 ### 1.2 解决的问题
 
 传统研学方案开发面临的挑战：
@@ -216,9 +223,9 @@ Running on local URL: http://localhost:7860
 
 | 示例 | 关键词 |
 |------|--------|
-| 龙潭村 + 福建省 + 宁德市 + 屏南县 | 空（使用默认课程） |
-| 龙潭村 + 福建省 + 宁德市 + 屏南县 | 土豆 石拱廊桥 |
-| 龙潭村 + 福建省 + 宁德市 + 屏南县 | 黄酒 竹编 四平戏 |
+
+| 龙潭村 + 福建省 + 宁德市 + 屏南县 | 柿子 黄酒 石拱廊桥 水稻田 |
+
 
 ### 5.3 输出目录
 
