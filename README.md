@@ -14,6 +14,12 @@
 
 <img width="2048" height="1536" alt="龙潭村研学地图_手绘版" src="https://github.com/user-attachments/assets/f774dc33-67c1-44d9-ba4e-90a5f6c52782" />
 
+<img width="1152" height="2048" alt="龙潭红曲黄酒酿造技艺研学海报" src="https://github.com/user-attachments/assets/7fd088b9-8101-422a-b4cb-74c117191c5f" />
+
+<img width="1152" height="2048" alt="龙潭村柿子研学海报" src="https://github.com/user-attachments/assets/cb03b16d-8b7b-449a-8cab-76d3e21a029d" />
+
+<img width="1152" height="2048" alt="达芬奇拱桥与廊桥木构研学课程海报_去头像版" src="https://github.com/user-attachments/assets/ae475ee7-8b34-4fa8-94a5-c6c37ceab7a4" />
+
 
 ### 1.2 解决的问题
 
