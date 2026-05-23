@@ -1,0 +1,34 @@
+{
+  "village_name": "龙潭村",
+  "generated_at": "2026-05-23T23:07:11.875115",
+  "files": {
+    "keyword_course_pdf": "C:\\hermes\\WorkAI\\village_study_tour\\output\\龙潭村\\龙潭村_特色体验课程.pdf",
+    "keyword_course_md": "C:\\hermes\\WorkAI\\village_study_tour\\output\\龙潭村\\龙潭村_特色体验课程.md",
+    "solution_pdf": "C:\\hermes\\WorkAI\\village_study_tour\\output\\龙潭村\\龙潭村_研学解决方案.pdf",
+    "treasure_hunt_pdf": "C:\\hermes\\WorkAI\\village_study_tour\\output\\龙潭村\\龙潭村_九宫格寻宝卡.pdf",
+    "lesson_plan_pdfs": [],
+    "summer_camp_pdf": "C:\\hermes\\WorkAI\\village_study_tour\\output\\龙潭村\\龙潭村_夏令营研学手册.pdf",
+    "exhibition_pdf": "C:\\hermes\\WorkAI\\village_study_tour\\output\\龙潭村\\龙潭村_策展方案.pdf",
+    "curriculum_pdf": "C:\\hermes\\WorkAI\\village_study_tour\\output\\龙潭村\\龙潭村_课程体系.pdf",
+    "execution_form_pdf": "C:\\hermes\\WorkAI\\village_study_tour\\output\\龙潭村\\龙潭村_执行单.pdf",
+    "material_list_pdf": "C:\\hermes\\WorkAI\\village_study_tour\\output\\龙潭村\\龙潭村_物料清单.pdf",
+    "inspection_pdf": "C:\\hermes\\WorkAI\\village_study_tour\\output\\龙潭村\\龙潭村_巡场检查表.pdf",
+    "poster_pngs": [
+      "C:\\hermes\\WorkAI\\village_study_tour\\output\\龙潭村\\龙潭村_海报_一日游学.png",
+      "C:\\hermes\\WorkAI\\village_study_tour\\output\\龙潭村\\龙潭村_海报_夏令营.png",
+      "C:\\hermes\\WorkAI\\village_study_tour\\output\\龙潭村\\龙潭村_海报_寻宝卡.png",
+      "C:\\hermes\\WorkAI\\village_study_tour\\output\\龙潭村\\龙潭村_海报_村庄宣传.png"
+    ],
+    "slogans": [
+      "走进龙潭村，探索乡土之美",
+      "龙潭村——研学探索新体验",
+      "在龙潭村，读懂乡土中国"
+    ],
+    "logo_path": "C:\\hermes\\WorkAI\\village_study_tour\\output\\龙潭村\\龙潭村_研学品牌Logo.png",
+    "cultural_products": [
+      "C:\\hermes\\WorkAI\\village_study_tour\\output\\龙潭村\\龙潭村_文创_帆布袋.png",
+      "C:\\hermes\\WorkAI\\village_study_tour\\output\\龙潭村\\龙潭村_文创_明信片.png",
+      "C:\\hermes\\WorkAI\\village_study_tour\\output\\龙潭村\\龙潭村_文创_文化衫.png"
+    ]
+  }
+}
