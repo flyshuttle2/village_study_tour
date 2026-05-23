@@ -177,6 +177,10 @@ LOVART_SECRET_KEY=your_lovart_secret_key
 双击运行「启动WebUI.bat」
 ```
 
+<img width="856" height="455" alt="image" src="https://github.com/user-attachments/assets/5718ddab-2cbe-443d-afd8-6fac005a9111" />
+
+
+
 **方式二：命令行启动**
 
 ```bash
@@ -198,6 +202,9 @@ Running on local URL: http://localhost:7860
 ### 4.5 访问服务
 
 在浏览器打开：http://localhost:7860
+
+<img width="1274" height="580" alt="image" src="https://github.com/user-attachments/assets/7fef1e00-c311-4906-94ab-5f6e46a34d92" />
+
 
 ---
 
