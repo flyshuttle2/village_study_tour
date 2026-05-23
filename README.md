@@ -20,6 +20,10 @@
 
 <img width="1152" height="2048" alt="达芬奇拱桥与廊桥木构研学课程海报_去头像版" src="https://github.com/user-attachments/assets/ae475ee7-8b34-4fa8-94a5-c6c37ceab7a4" />
 
+<img width="1152" height="2048" alt="龙潭村溪流研学海报" src="https://github.com/user-attachments/assets/543a2c77-d7d8-41fb-a6c5-01350086230f" />
+
+<img width="1152" height="2048" alt="龙潭村农耕食育研学海报 (1)" src="https://github.com/user-attachments/assets/1fbd97f6-115a-4b9b-ba42-3b559d3ff188" />
+
 
 ### 1.2 解决的问题
 
