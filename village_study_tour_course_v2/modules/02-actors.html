@@ -1,0 +1,183 @@
+<section class="module" id="module-2">
+  <div class="module-content">
+    
+    <h2>🤖 AI Agent 集群</h2>
+    
+    <p class="lead">项目的"大脑"由多个 AI Agent 组成，每个 Agent 专攻一个领域。</p>
+
+    <div class="group-chat animate-in" id="chat-agents">
+      <div class="chat-message user">
+        <div class="chat-avatar">👤</div>
+        <div class="chat-bubble">帮我生成龙潭村的研学方案！</div>
+      </div>
+      <div class="chat-message bot">
+        <div class="chat-avatar">🎯</div>
+        <div class="chat-bubble">我是 SolutionAgent，分析村庄特色，设计研学主题和行程。</div>
+      </div>
+      <div class="chat-message bot">
+        <div class="chat-avatar">📚</div>
+        <div class="chat-bubble">我是 LessonPlanAgent，设计 5 门课程的教案！</div>
+      </div>
+      <div class="chat-message bot">
+        <div class="chat-avatar">🏕️</div>
+        <div class="chat-bubble">我是 CampManualAgent，写夏令营手册！</div>
+      </div>
+      <div class="chat-message bot">
+        <div class="chat-avatar">🔑</div>
+        <div class="chat-bubble">我是 KeywordCourseAgent，生成关键词特色课程！</div>
+      </div>
+    </div>
+
+    <h3>📋 Agent 一览表</h3>
+    
+    <table class="info-table">
+      <thead>
+        <tr>
+          <th>Agent</th>
+          <th>负责生成</th>
+          <th>输入</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>SolutionAgent</strong></td>
+          <td>研学旅行解决方案</td>
+          <td>村庄信息 + 特色</td>
+        </tr>
+        <tr>
+          <td><strong>LessonPlanAgent</strong></td>
+          <td>5份课程教案</td>
+          <td>村庄特色</td>
+        </tr>
+        <tr>
+          <td><strong>CampManualAgent</strong></td>
+          <td>夏令营手册</td>
+          <td>特色 + 教案</td>
+        </tr>
+        <tr>
+          <td><strong>ExhibitionAgent</strong></td>
+          <td>策展方案</td>
+          <td>特色 + 解决方案</td>
+        </tr>
+        <tr>
+          <td><strong>CurriculumAgent</strong></td>
+          <td>课程体系</td>
+          <td>特色 + 教案</td>
+        </tr>
+        <tr>
+          <td><strong>KeywordCourseAgent</strong></td>
+          <td>关键词特色课程</td>
+          <td>关键词 + 特色</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</section>
+
+<section class="module" id="module-2-2">
+  <div class="module-content">
+    
+    <h2>🔧 Agent 工作原理</h2>
+    
+    <p>每个 Agent 的核心是 <strong>System Prompt</strong>，告诉 AI 扮演什么角色、怎么思考。</p>
+
+    <div class="translation-block animate-in">
+      <div class="translation-code">
+        <span class="translation-label">CODE</span>
+        <pre><code>SYSTEM_PROMPT = """
+你是一个专注于中国乡村文旅
+研学方案设计的专家AI...
+
+## 核心方法论
+1. 县域格局分析
+2. 人文地理纵深
+3. 研学价值定位
+
+## 固定活动
+- 村史馆参观
+- 九宫格寻宝卡
+
+## 输出格式
+严格按JSON输出..."""</code></pre>
+      </div>
+      <div class="translation-english">
+        <span class="translation-label">PLAIN ENGLISH</span>
+        <div class="translation-lines">
+          <p class="tl">告诉 AI：你是乡村文旅专家</p>
+          <p class="tl">给 AI 分析问题的框架</p>
+          <p class="tl">规定必须包含的内容</p>
+          <p class="tl">要求输出 JSON 格式</p>
+        </div>
+      </div>
+    </div>
+
+    <h3>工作流程</h3>
+
+    <div class="flow-animation" id="flow-agent" data-steps='[
+      {"icon": "📥", "title": "接收输入", "desc": "村庄名称、特色信息"},
+      {"icon": "📝", "title": "构建 Prompt", "desc": "组装系统提示 + 用户信息"},
+      {"icon": "🤖", "title": "调用 AI", "desc": "发给 MiniMax API"},
+      {"icon": "📤", "title": "解析结果", "desc": "提取 JSON 并验证"},
+      {"icon": "✅", "title": "返回数据", "desc": "返回结构化结果"}
+    ]'></div>
+
+  </div>
+</section>
+
+<section class="module" id="module-2-3">
+  <div class="module-content">
+    
+    <h2>📁 生成器家族</h2>
+    
+    <p class="lead">Agent 负责"想内容"，Generator 负责"做文件"。</p>
+
+    <div class="feature-cards">
+      <div class="feature-card">
+        <span class="feature-icon">📄</span>
+        <h4>PDF 生成器</h4>
+        <p>将 JSON 数据渲染成 PDF</p>
+        <code class="inline-code">generators/pdf_*.py</code>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🖼️</span>
+        <h4>海报生成器</h4>
+        <p>生成 AI 图片提示词</p>
+        <code class="inline-code">poster_generator.py</code>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🎭</span>
+        <h4>品牌生成器</h4>
+        <p>Logo、标语、文创</p>
+        <code class="inline-code">brand_generator.py</code>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🎯</span>
+        <h4>寻宝卡生成器</h4>
+        <p>九宫格寻宝卡</p>
+        <code class="inline-code">treasure_hunt_generator.py</code>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">📝</span>
+        <h4>执行表单</h4>
+        <p>执行单、物料清单、检查表</p>
+        <code class="inline-code">pdf_execution_form.py</code>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🔑</span>
+        <h4>关键词课程</h4>
+        <p>关键词生成的特色课程</p>
+        <code class="inline-code">pdf_keyword_course.py</code>
+      </div>
+    </div>
+
+    <div class="callout info">
+      <span class="callout-icon">🔄</span>
+      <div>
+        <strong>JSON → HTML → PDF</strong><br>
+        用 HTML + CSS 做排版，再用 WeasyPrint 转 PDF（备选：ReportLab）
+      </div>
+    </div>
+
+  </div>
+</section>

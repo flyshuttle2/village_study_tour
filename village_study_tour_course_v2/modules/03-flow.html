@@ -1,0 +1,123 @@
+<section class="module" id="module-3">
+  <div class="module-content">
+    
+    <h2>🔀 完整数据流程</h2>
+    
+    <p class="lead">OutputCoordinator 是整个流程的"导演"，协调所有 Agent 和 Generator。</p>
+
+    <div class="flow-animation" id="flow-full" data-steps='[
+      {"icon": "📝", "title": "用户输入", "desc": "村庄信息、关键词、图片"},
+      {"icon": "🔑", "title": "关键词处理", "desc": "KeywordCourseAgent"},
+      {"icon": "🖼️", "title": "图片分析", "desc": "ImageAnalyzer"},
+      {"icon": "🗺️", "title": "地理信息", "desc": "查询经纬度"},
+      {"icon": "🎯", "title": "生成方案", "desc": "SolutionAgent"},
+      {"icon": "📚", "title": "生成教案", "desc": "LessonPlanAgent ×5"},
+      {"icon": "🏕️", "title": "夏令营手册", "desc": "CampManualAgent"},
+      {"icon": "📄", "title": "PDF 输出", "desc": "各 Generator"},
+      {"icon": "🎨", "title": "图片输出", "desc": "PosterGenerator"}
+    ]'></div>
+
+    <h3>实际代码中的流程</h3>
+
+    <div class="translation-block animate-in">
+      <div class="translation-code">
+        <span class="translation-label">CODE</span>
+        <pre><code>class OutputCoordinator:
+    def run_full_pipeline(self, village):
+        # 1. 关键词课程
+        if village.keywords:
+            kw_result = self.keyword_course_agent.generate(
+                village.keywords, features.model_dump()
+            )
+        
+        # 2. 图片分析
+        features = self.image_analyzer.analyze_images(...)
+        
+        # 3. 生成研学方案
+        solution = self.solution_agent.generate(...)
+        
+        # 4. 生成教案
+        lesson_plans = self.lesson_plan_agent.generate_all(...)
+        
+        # 5. 生成执行表单
+        generate_execution_form_pdf(...)
+        
+        return results</code></pre>
+      </div>
+      <div class="translation-english">
+        <span class="translation-label">PLAIN ENGLISH</span>
+        <div class="translation-lines">
+          <p class="tl">协调器类，串联所有流程</p>
+          <p class="tl">先处理关键词，生成特色课程</p>
+          <p class="tl">分析用户上传的图片</p>
+          <p class="tl">让方案 Agent 生成方案</p>
+          <p class="tl">让教案 Agent 生成多份教案</p>
+          <p class="tl">生成执行单、物料清单等</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="module" id="module-3-2">
+  <div class="module-content">
+    
+    <h2>📤 输出文件清单</h2>
+    
+    <p>一次生成，完整输出：</p>
+
+    <div class="icon-rows">
+      <div class="icon-row">
+        <div class="icon-circle" style="background:#E8F5EE">📋</div>
+        <div>
+          <strong>研学解决方案.pdf</strong>
+          <p>完整的研学旅行方案</p>
+        </div>
+      </div>
+      <div class="icon-row">
+        <div class="icon-circle" style="background:#FDF5E0">🎯</div>
+        <div>
+          <strong>九宫格寻宝卡.pdf</strong>
+          <p>互动探索游戏</p>
+        </div>
+      </div>
+      <div class="icon-row">
+        <div class="icon-circle" style="background:#FDEEE9">📚</div>
+        <div>
+          <strong>教案×5.pdf</strong>
+          <p>详细的教学设计</p>
+        </div>
+      </div>
+      <div class="icon-row">
+        <div class="icon-circle" style="background:#E4F2F7">🏕️</div>
+        <div>
+          <strong>夏令营手册.pdf</strong>
+          <p>营地生活指南</p>
+        </div>
+      </div>
+      <div class="icon-row">
+        <div class="icon-circle" style="background:#F5F0E8">🔑</div>
+        <div>
+          <strong>特色体验课程.pdf / .md</strong>
+          <p>关键词生成的课程</p>
+        </div>
+      </div>
+      <div class="icon-row">
+        <div class="icon-circle" style="background:#FDE8E8">📝</div>
+        <div>
+          <strong>执行单 + 物料清单 + 检查表</strong>
+          <p>活动执行支持文档</p>
+        </div>
+      </div>
+      <div class="icon-row">
+        <div class="icon-circle" style="background:#F0F0F0">🎨</div>
+        <div>
+          <strong>海报×9 + Logo + 文创</strong>
+          <p>品牌视觉内容</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

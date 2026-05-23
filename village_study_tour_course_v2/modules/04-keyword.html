@@ -1,0 +1,203 @@
+<section class="module" id="module-4">
+  <div class="module-content">
+    
+    <h2>🔑 关键词研学课程系统</h2>
+    
+    <p class="lead">输入具体关键词，自动生成对应的体验课程。</p>
+
+    <div class="callout success">
+      <span class="callout-icon">💡</span>
+      <div>
+        <strong>核心思路：</strong>关键词不是"非遗"、"农耕"这种大类，而是更具体的词（如"土豆"、"石拱廊桥"），系统自动推断类别并生成对应课程。
+      </div>
+    </div>
+
+    <h3>示例</h3>
+    
+    <div class="steps">
+      <div class="step">
+        <span class="step-number">输入</span>
+        <div class="step-content">
+          <h4>土豆 石拱廊桥 黄酒</h4>
+          <p>空格分隔的关键词</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-number">↓</span>
+        <div class="step-content">
+          <h4>自动识别类别</h4>
+          <p>土豆→农耕，石拱廊桥→建造，黄酒→非遗</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-number">↓</span>
+        <div class="step-content">
+          <h4>生成课程</h4>
+          <p>土豆的一生、达芬奇拱桥挑战、古法酿酒体验...</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="module" id="module-4-2">
+  <div class="module-content">
+    
+    <h2>📚 预设关键词库</h2>
+    
+    <p>当前支持的关键词（可扩展）：</p>
+
+    <table class="info-table">
+      <thead>
+        <tr>
+          <th>关键词</th>
+          <th>类别</th>
+          <th>课程</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>土豆</strong></td>
+          <td>农耕体验</td>
+          <td>土豆的一生、美食工作坊</td>
+        </tr>
+        <tr>
+          <td><strong>石拱廊桥</strong></td>
+          <td>建造体验</td>
+          <td>达芬奇拱桥挑战、廊桥木作</td>
+        </tr>
+        <tr>
+          <td><strong>柿子</strong></td>
+          <td>美食/手工艺</td>
+          <td>柿染植物染、柿饼制作</td>
+        </tr>
+        <tr>
+          <td><strong>黄酒</strong></td>
+          <td>非遗传承</td>
+          <td>古法酿酒体验</td>
+        </tr>
+        <tr>
+          <td><strong>竹编</strong></td>
+          <td>手工艺</td>
+          <td>指尖上的竹编</td>
+        </tr>
+        <tr>
+          <td><strong>四平戏</strong></td>
+          <td>戏曲表演</td>
+          <td>走进四平戏</td>
+        </tr>
+        <tr>
+          <td><strong>水稻</strong></td>
+          <td>农耕体验</td>
+          <td>稻花香里说丰年</td>
+        </tr>
+        <tr>
+          <td><strong>豆腐</strong></td>
+          <td>美食制作</td>
+          <td>豆腐诞生记</td>
+        </tr>
+        <tr>
+          <td><strong>夯土</strong></td>
+          <td>建造体验</td>
+          <td>夯土建筑体验</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout warning">
+      <span class="callout-icon">⚠️</span>
+      <div>
+        <strong>关联度判断：</strong>系统会计算关键词与乡村研学的关联度。关联度低于 0.6 的关键词会被忽略（如"无人机"、"编程"等）。
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="module" id="module-4-3">
+  <div class="module-content">
+    
+    <h2>⚙️ 关键词转译引擎</h2>
+    
+    <p>核心代码在 <code>rag/keyword_translator.py</code>：</p>
+
+    <div class="translation-block animate-in">
+      <div class="translation-code">
+        <span class="translation-label">CODE</span>
+        <pre><code>def translate_keywords(keyword_string):
+    keywords = keyword_string.split()
+    valid_kw = []
+    courses = []
+    
+    for kw in keywords:
+        relevance = calculate_relevance(kw)
+        if relevance >= MIN_THRESHOLD:
+            valid_kw.append(kw)
+            courses.extend(match_courses(kw))
+    
+    return {
+        "valid_keywords": valid_kw,
+        "courses": courses[:MAX_COURSES]
+    }
+
+def calculate_relevance(keyword):
+    # 1. 精确匹配预设关键词
+    if keyword in KEYWORD_COURSES:
+        return KEYWORD_COURSES[keyword]["relevance"]
+    
+    # 2. 特征匹配打分
+    score = 0.0
+    for char in keyword:
+        if char in RURAL_FEATURES:
+            score += 0.12
+    
+    # 3. 惩罚不相关词
+    for pattern in UNRELATED_PATTERNS:
+        if pattern in keyword:
+            score -= 0.6
+    
+    return max(0.0, min(1.0, score))</code></pre>
+      </div>
+      <div class="translation-english">
+        <span class="translation-label">PLAIN ENGLISH</span>
+        <div class="translation-lines">
+          <p class="tl">按空格分割关键词</p>
+          <p class="tl">计算每个词的关联度</p>
+          <p class="tl">超过阈值才保留</p>
+          <p class="tl">精确匹配返回预设关联度</p>
+          <p class="tl">按乡村特征字符打分</p>
+          <p class="tl">降低明显无关的词</p>
+          <p class="tl">返回 0~1 的关联度</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="quiz-container" id="quiz-module4">
+      <div class="quiz-question-block"
+           data-correct="c"
+           data-explanation-right="正确！系统会自动计算关联度，低于阈值的词会被忽略。"
+           data-explanation-wrong="不对...系统会自动判断，不一定会生成课程。">
+        <h3 class="quiz-question">如果用户输入"无人机"作为关键词，系统会怎么处理？</h3>
+        <div class="quiz-options">
+          <button class="quiz-option" data-value="a" onclick="selectOption(this)">
+            <div class="quiz-option-radio"></div>
+            <span>A. 生成无人机课程</span>
+          </button>
+          <button class="quiz-option" data-value="b" onclick="selectOption(this)">
+            <div class="quiz-option-radio"></div>
+            <span>B. 报错提示错误</span>
+          </button>
+          <button class="quiz-option" data-value="c" onclick="selectOption(this)">
+            <div class="quiz-option-radio"></div>
+            <span>C. 忽略该关键词</span>
+          </button>
+        </div>
+        <div class="quiz-feedback"></div>
+      </div>
+      <button class="quiz-check-btn" onclick="checkQuiz('quiz-module4')">检查答案</button>
+      <button class="quiz-reset-btn" onclick="resetQuiz('quiz-module4')">重新尝试</button>
+    </div>
+
+  </div>
+</section>

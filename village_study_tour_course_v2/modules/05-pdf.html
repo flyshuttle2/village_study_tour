@@ -1,0 +1,132 @@
+<section class="module" id="module-5">
+  <div class="module-content">
+    
+    <h2>📄 PDF 生成原理</h2>
+    
+    <p class="lead">JSON 数据 → HTML 模板 → PDF 文件</p>
+
+    <div class="flow-steps">
+      <div class="flow-step">
+        <div class="flow-step-num">1</div>
+        <p>JSON 数据</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="flow-step-num">2</div>
+        <p>HTML 模板</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="flow-step-num">3</div>
+        <p>WeasyPrint</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="flow-step-num">4</div>
+        <p>PDF 文件</p>
+      </div>
+    </div>
+
+    <h3>第一步：JSON → HTML</h3>
+
+    <div class="translation-block animate-in">
+      <div class="translation-code">
+        <span class="translation-label">CODE</span>
+        <pre><code>html = "<!DOCTYPE html><html>"
+html += "<style>"
+html += "body{font-family:SimSun;}"
+html += "h1{color:#2D5016;}"
+html += "</style><body>"
+html += "<h1>" + solution.title + "</h1>"
+html += "<p>主题：" + overview.theme + "</p>"</code></pre>
+      </div>
+      <div class="translation-english">
+        <span class="translation-label">PLAIN ENGLISH</span>
+        <div class="translation-lines">
+          <p class="tl">开始构建 HTML 文档</p>
+          <p class="tl">添加 CSS 样式</p>
+          <p class="tl">把 JSON 数据嵌入 HTML</p>
+        </div>
+      </div>
+    </div>
+
+    <h3>第二步：HTML → PDF</h3>
+
+    <div class="translation-block animate-in">
+      <div class="translation-code">
+        <span class="translation-label">CODE</span>
+        <pre><code>from generators.pdf_utils import generate_pdf_from_html
+
+generate_pdf_from_html(html, output_path)</code></pre>
+      </div>
+      <div class="translation-english">
+        <span class="translation-label">PLAIN ENGLISH</span>
+        <div class="translation-lines">
+          <p class="tl">调用 PDF 生成工具</p>
+          <p class="tl">传入 HTML 和输出路径</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout warning">
+      <span class="callout-icon">⚠️</span>
+      <div>
+        <strong>备选方案：ReportLab</strong><br>
+        WeasyPrint 需要 GTK3 库。如果不可用，系统自动切换到纯 Python 的 ReportLab。
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="module" id="module-5-2">
+  <div class="module-content">
+    
+    <h2>📑 PDF 生成器一览</h2>
+    
+    <table class="info-table">
+      <thead>
+        <tr>
+          <th>生成器</th>
+          <th>输出</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>pdf_solution.py</strong></td><td>研学解决方案</td></tr>
+        <tr><td><strong>pdf_lesson_plan.py</strong></td><td>课程教案</td></tr>
+        <tr><td><strong>pdf_camp_manual.py</strong></td><td>夏令营手册</td></tr>
+        <tr><td><strong>pdf_exhibition.py</strong></td><td>策展方案</td></tr>
+        <tr><td><strong>pdf_curriculum.py</strong></td><td>课程体系</td></tr>
+        <tr><td><strong>pdf_keyword_course.py</strong></td><td>关键词课程</td></tr>
+        <tr><td><strong>pdf_execution_form.py</strong></td><td>活动执行单</td></tr>
+        <tr><td><strong>pdf_material_list.py</strong></td><td>物料准备清单</td></tr>
+        <tr><td><strong>pdf_inspection.py</strong></td><td>巡场检查表</td></tr>
+        <tr><td><strong>pdf_signin.py</strong></td><td>签到表</td></tr>
+        <tr><td><strong>treasure_hunt_generator.py</strong></td><td>九宫格寻宝卡</td></tr>
+      </tbody>
+    </table>
+
+    <h3>统一接口</h3>
+
+    <div class="translation-block animate-in">
+      <div class="translation-code">
+        <span class="translation-label">CODE</span>
+        <pre><code>def generate_xxx_pdf(data, output_path):
+    # 1. 提取数据
+    # 2. 构建 HTML
+    # 3. 生成 PDF
+    generate_pdf_from_html(html, output_path)</code></pre>
+      </div>
+      <div class="translation-english">
+        <span class="translation-label">PLAIN ENGLISH</span>
+        <div class="translation-lines">
+          <p class="tl">统一的函数结构</p>
+          <p class="tl">从 JSON 提取需要的数据</p>
+          <p class="tl">用模板构建 HTML</p>
+          <p class="tl">调用工具生成 PDF</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,170 @@
+<section class="module" id="module-1">
+  <div class="module-content">
+    
+    <h2>🏡 村庄研学魔法师</h2>
+    
+    <p class="lead">一个将十二年乡村研学经验蒸馏进 AI 智能体的项目，为村庄文旅研学产业生成一揽子解决方案。</p>
+    
+    <div class="callout info">
+      <span class="callout-icon">💡</span>
+      <div>
+        <strong>一句话描述：</strong>输入村庄名称 + 关键词，AI 自动生成研学解决方案、课程教案、宣传海报、品牌视觉等全套内容。
+      </div>
+    </div>
+
+    <h3>🎯 输出内容一览</h3>
+    
+    <div class="feature-cards">
+      <div class="feature-card">
+        <span class="feature-icon">📋</span>
+        <h4>研学解决方案</h4>
+        <p>完整的研学旅行方案 PDF</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🎯</span>
+        <h4>九宫格寻宝卡</h4>
+        <p>互动探索卡片</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">📚</span>
+        <h4>5份课程教案</h4>
+        <p>详细的教学设计</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🏕️</span>
+        <h4>夏令营手册</h4>
+        <p>完整的营地指南</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🎨</span>
+        <h4>课程海报</h4>
+        <p>9张研学活动海报</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">✨</span>
+        <h4>品牌视觉</h4>
+        <p>Logo、标语、文创</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">📝</span>
+        <h4>执行单/物料清单</h4>
+        <p>活动执行表单</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🔑</span>
+        <h4>特色体验课程</h4>
+        <p>关键词生成的课程</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="module" id="module-1-2">
+  <div class="module-content">
+    
+    <h2>👤 UI 界面</h2>
+    
+    <p>网页应用，使用 Gradio 框架构建。</p>
+    
+    <h3>输入区域</h3>
+    
+    <div class="steps">
+      <div class="step">
+        <span class="step-number">1</span>
+        <div class="step-content">
+          <h4>基本信息</h4>
+          <p>村庄名称、省份、城市、县区、乡镇</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-number">2</span>
+        <div class="step-content">
+          <h4>关键词（可选）</h4>
+          <p>空格分隔，如：柿子 石拱廊桥 黄酒</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-number">3</span>
+        <div class="step-content">
+          <h4>补充资料（可选）</h4>
+          <p>村庄图片、地方文献 PDF</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="callout info">
+      <span class="callout-icon">🔑</span>
+      <div>
+        <strong>关键词系统：</strong>输入具体关键词（如"土豆"、"石拱廊桥"），系统会自动生成对应的体验课程。
+      </div>
+    </div>
+
+    <h3>技术架构</h3>
+    
+    <div class="architecture-simple">
+      <div class="arch-layer">
+        <span class="arch-label">用户界面</span>
+        <div class="arch-box user-interface">Gradio 网页</div>
+      </div>
+      <div class="arch-arrow">↓</div>
+      <div class="arch-layer">
+        <span class="arch-label">核心引擎</span>
+        <div class="arch-box ai-engine">AI Agent 集群</div>
+      </div>
+      <div class="arch-arrow">↓</div>
+      <div class="arch-layer">
+        <span class="arch-label">生成器</span>
+        <div class="arch-box generators">PDF + 图片</div>
+      </div>
+      <div class="arch-arrow">↓</div>
+      <div class="arch-layer">
+        <span class="arch-label">输出</span>
+        <div class="arch-box output">全套研学方案</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="module" id="module-1-3">
+  <div class="module-content">
+    
+    <h2>🗂️ 项目结构</h2>
+    
+    <div class="file-tree">
+      <div class="tree-item folder">village_study_tour/</div>
+      <div class="tree-children">
+        <div class="tree-item file">app.py <span class="tree-hint">— Web UI 入口</span></div>
+        <div class="tree-item file">output_coordinator.py <span class="tree-hint">— 流程编排器</span></div>
+        <div class="tree-item file">config.py <span class="tree-hint">— 配置</span></div>
+        <div class="tree-item folder">agents/ <span class="tree-hint">— AI Agent</span></div>
+        <div class="tree-children">
+          <div class="tree-item file">solution_agent.py</div>
+          <div class="tree-item file">lesson_plan_agent.py</div>
+          <div class="tree-item file">camp_manual_agent.py</div>
+          <div class="tree-item file">exhibition_agent.py</div>
+          <div class="tree-item file">curriculum_agent.py</div>
+          <div class="tree-item file">keyword_course_agent.py <span class="tree-hint">— 关键词课程</span></div>
+        </div>
+        <div class="tree-item folder">generators/ <span class="tree-hint">— PDF/图片生成</span></div>
+        <div class="tree-children">
+          <div class="tree-item file">pdf_*.py <span class="tree-hint">— 各种 PDF 生成器</span></div>
+          <div class="tree-item file">poster_generator.py</div>
+          <div class="tree-item file">brand_generator.py</div>
+          <div class="tree-item file">treasure_hunt_generator.py</div>
+        </div>
+        <div class="tree-item folder">rag/ <span class="tree-hint">— 知识库</span></div>
+        <div class="tree-children">
+          <div class="tree-item file">village_knowledge.py</div>
+          <div class="tree-item file">keyword_registry.py <span class="tree-hint">— 关键词知识库</span></div>
+          <div class="tree-item file">keyword_translator.py <span class="tree-hint">— 转译引擎</span></div>
+        </div>
+        <div class="tree-item folder">models/</div>
+        <div class="tree-item folder">knowledge/</div>
+        <div class="tree-item folder">multimodal/</div>
+      </div>
+    </div>
+
+  </div>
+</section>

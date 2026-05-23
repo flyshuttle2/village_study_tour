@@ -1,0 +1,133 @@
+<section class="module" id="module-6">
+  <div class="module-content">
+    
+    <h2>🎨 图片生成系统</h2>
+    
+    <p class="lead">两步走策略：先生成提示词，再调用图片服务。</p>
+
+    <div class="steps">
+      <div class="step">
+        <span class="step-number">1</span>
+        <div class="step-content">
+          <h4>生成提示词</h4>
+          <p>根据内容生成详细的图片描述</p>
+          <code>poster_generator.py</code>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-number">2</span>
+        <div class="step-content">
+          <h4>调用图片服务</h4>
+          <p>Lovart 或 MiniMax</p>
+          <code>scripts/lovart_wrapper.py</code>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout info">
+      <span class="callout-icon">🤖</span>
+      <div>
+        <strong>风格定位：手绘涂鸦风</strong><br>
+        统一使用"Obsidian 手绘插件风格"——有机线条、笔记本涂鸦质感、温馨有趣。
+      </div>
+    </div>
+
+    <h3>支持的图片类型</h3>
+    
+    <div class="feature-cards">
+      <div class="feature-card">
+        <span class="feature-icon">📸</span>
+        <h4>课程海报 ×5</h4>
+        <p>每门课程一张</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🏕️</span>
+        <h4>夏令营海报</h4>
+        <p>吸引学生参加</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🚶</span>
+        <h4>一日游学海报</h4>
+        <p>短途研学体验</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🎯</span>
+        <h4>寻宝卡海报</h4>
+        <p>九宫格宣传</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🏡</span>
+        <h4>村庄宣传海报</h4>
+        <p>整体形象展示</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">✨</span>
+        <h4>Logo + 文创</h4>
+        <p>品牌视觉</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="module" id="module-6-2">
+  <div class="module-content">
+    
+    <h2>📝 提示词模板</h2>
+    
+    <p>提示词质量决定图片质量：</p>
+
+    <div class="translation-block animate-in">
+      <div class="translation-code">
+        <span class="translation-label">CODE</span>
+        <pre><code>STYLE_PREFIX = """
+竖版9:16，手绘涂鸦风，
+Obsidian手绘插件风格，
+有机线条，笔记本涂鸦质感
+"""
+
+prompt = f"""{STYLE_PREFIX}
+{village_name}村落寻宝活动海报。
+
+主标题：{village_name}村落寻宝
+副标题：九宫格探索挑战
+
+元素设计：
+- 寻宝主题元素：地图、罗盘、放大镜
+- 村庄特色：{features.geography}
+- 手绘涂鸦风格
+
+风格要求：
+- 竖版9:16比例
+- 适合儿童研学活动"""</code></pre>
+      </div>
+      <div class="translation-english">
+        <span class="translation-label">PLAIN ENGLISH</span>
+        <div class="translation-lines">
+          <p class="tl">定义统一的风格前缀</p>
+          <p class="tl">用模板组装完整提示词</p>
+          <p class="tl">嵌入村庄名称</p>
+          <p class="tl">加入村庄特色元素</p>
+          <p class="tl">明确比例和风格要求</p>
+        </div>
+      </div>
+    </div>
+
+    <h3>服务选择策略</h3>
+
+    <div class="flow-animation" id="flow-image" data-steps='[
+      {"icon": "1️⃣", "title": "尝试 Lovart", "desc": "优先使用 Lovart AI"},
+      {"icon": "✅", "title": "成功？", "desc": "可用则使用"},
+      {"icon": "🔄", "title": "回退", "desc": "不可用则用 MiniMax"},
+      {"icon": "💾", "title": "保存", "desc": "下载到本地"}
+    ]'></div>
+
+    <div class="callout success">
+      <span class="callout-icon">🎉</span>
+      <div>
+        <strong>完成！</strong>现在你对这个项目有了完整的理解。从用户输入 → AI 分析 → 内容生成 → PDF/图片输出，整个流程自动化完成。
+      </div>
+    </div>
+
+  </div>
+</section>
