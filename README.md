@@ -24,6 +24,16 @@
 
 <img width="1152" height="2048" alt="龙潭村农耕食育研学海报 (1)" src="https://github.com/user-attachments/assets/1fbd97f6-115a-4b9b-ba42-3b559d3ff188" />
 
+<img width="2048" height="2048" alt="文创7-8-9：研学护照_草木染方巾_古风团扇" src="https://github.com/user-attachments/assets/6c3182be-6ee0-4e86-84de-2b2450ae2437" />
+
+<img width="1152" height="2048" alt="产品7-研学通关护照-完整方案" src="https://github.com/user-attachments/assets/1cd886eb-3af9-470f-82cb-252f66dbcb08" />
+
+<img width="2048" height="2048" alt="文创4-5-6：畲绣香囊_图腾帆布包_竹制书签" src="https://github.com/user-attachments/assets/3e68c493-b26a-473c-9804-65d00e33d9e5" />
+
+<img width="2048" height="2048" alt="文创1-2-3：古桥冰箱贴_立体拼图_水墨明信片" src="https://github.com/user-attachments/assets/dab24e02-a1b3-4823-8047-c73dd4812af9" />
+
+<img width="1152" height="2048" alt="产品8-柿染方巾-完整方案" src="https://github.com/user-attachments/assets/ec5c69f1-63a7-432a-b3b8-878d216d62bd" />
+
 
 ### 1.2 解决的问题
 
